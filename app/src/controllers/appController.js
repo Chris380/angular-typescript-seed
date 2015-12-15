@@ -4,14 +4,18 @@ var App;
     var Controllers;
     (function (Controllers) {
         var AppController = (function () {
-            function AppController($router, $mdSidenav) {
+            function AppController($router, $mdSidenav, $location) {
                 var _this = this;
                 this.$router = $router;
                 this.$mdSidenav = $mdSidenav;
+                this.$location = $location;
                 $router.config([
                     { path: "/", component: "home" },
                     { path: "/test", component: "test" }
                 ]);
+                this.isSelected = function (id) {
+                    return _this.$location.url().replace("/", "") === id;
+                };
                 this.closeLeftNav = function () {
                     _this.$mdSidenav("left").close();
                 };
@@ -25,7 +29,7 @@ var App;
                     _this.$mdSidenav("right").toggle();
                 };
             }
-            AppController.$inject = ["$router", "$mdSidenav"];
+            AppController.$inject = ["$router", "$mdSidenav", "$location"];
             return AppController;
         })();
         Controllers.AppController = AppController;

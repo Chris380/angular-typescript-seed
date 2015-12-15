@@ -16,3 +16,18 @@
 .test {
   color: green;
 }
+
+ul.left-menu {
+  padding: 0;
+  margin: 0;
+}
+
+.left-menu .md-button.active {
+  background: #CCC;
+}
+
+.left-menu a {
+  display: block;
+  padding: 0;
+  margin: 0;
+}
