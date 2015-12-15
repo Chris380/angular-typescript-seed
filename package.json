@@ -1,8 +1,8 @@
 {
   "name": "angular-typescript-seed",
   "version": "0.0.1",
-  "description": "",
-  "main": "index.js",
+  "description": "Christians AngularJS + TypeScript seed",
+  "main": "app/src/app.js",
   "dependencies": {
     "angular": "^1.4.8",
     "angular-material": "^0.11.4",
@@ -23,10 +23,16 @@
     "karma-jasmine": "^0.3.6",
     "karma-phantomjs-launcher": "^0.2.1",
     "phantomjs": "^1.9.18",
-    "tslint": "^2.5.1"
+    "tslint": "^2.5.1",
+    "protractor": "^2.5.1",
+    "chromedriver": "^2.19.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "grunt karma"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Chris380/angular-typescript-seed.git"
   },
   "author": "Christian Wiencke",
   "license": "ISC"
