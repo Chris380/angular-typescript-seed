@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="de" data-framework="angularjs">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimal-ui" name="viewport">
+
+  <title>Christians Angular / Angular Material / Typescript</title>
+  <link href="../node_modules/angular-material/angular-material.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+
+  <style>[ng-cloak] { display: none; }</style>
+</head>
+<body ng-app="DemoApp" ng-strict-di data-ng-controller="AppController as app" class="layout-row" row>
+
+    <!-- content -->
+
+        <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
+          <md-toolbar class="md-theme-indigo">
+            <h1 class="md-toolbar-tools">Linke Navigation</h1>
+          </md-toolbar>
+          <md-content layout-padding>
+
+            <ul>
+              <li><a class="md-button md-ink-ripple" ng-link="home">link to home component</a></li>
+              <li><a class="md-button md-ink-ripple" ng-link="test">link to test component</a></li>
+            </ul>
+
+            <md-button ng-click="app.closeLeftNav()" class="md-primary" hide-gt-md>
+              Schließen
+            </md-button>
+          </md-content>
+        </md-sidenav>
+        <md-content flex layout-padding>
+          <div layout="column" layout-fill layout-align="top center">
+            <div ng-viewport></div>
+
+            <div>
+              <md-button ng-click="app.toggleLeftNav()"
+                class="md-primary" hide-gt-md>
+                Toggle left
+              </md-button>
+            </div>
+            <div>
+              <md-button ng-click="app.toggleRightNav()"
+                ng-hide="app.isOpenRight()"
+                class="md-primary">
+                Toggle right
+              </md-button>
+            </div>
+          </div>
+          <div flex></div>
+        </md-content>
+        <md-sidenav class="md-sidenav-right md-whiteframe-z2" md-component-id="right">
+          <md-toolbar class="md-theme-light">
+            <h1 class="md-toolbar-tools">Sidenav Right</h1>
+          </md-toolbar>
+          <md-content layout-padding>
+            <form>
+              <md-input-container>
+                <label for="testInput">Test input</label>
+                <input type="text" id="testInput"
+                       ng-model="data" md-autofocus>
+              </md-input-container>
+            </form>
+            <md-button ng-click="app.closeRightNav()" class="md-primary">
+              Schließen
+            </md-button>
+          </md-content>
+        </md-sidenav>
+
+
+
+    <!-- jquery -->
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <!-- angular -->
+    <script src="../node_modules/angular/angular.js"></script>
+    <script src="../node_modules/angular-animate/angular-animate.js"></script>
+    <script src="../node_modules/angular-aria/angular-aria.js"></script>
+    <script src="../node_modules/angular-messages/angular-messages.js"></script>
+    <script src="../node_modules/angular-material/angular-material.js"></script>
+    <script src="../node_modules/angular-new-router/dist/router.es5.js"></script>
+
+  <!-- app -->
+  <script src="components/home/home.js"></script>
+  <script src="components/test/test.js"></script>
+  <script src="components/test/filters/upperCaseFilter.js"></script>
+  <script src="components/test/services/testservice.js"></script>
+  <script src="components/test/controllers/testcontroller.js"></script>
+
+  <script src="src/controllers/appController.js"></script>
+  <script src="src/app.js"></script>
+</body>
+</html>

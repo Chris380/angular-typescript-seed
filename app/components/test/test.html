@@ -1,0 +1,23 @@
+<div class="section">
+
+  <h1>Modul Test</h1>
+
+  <div ng-bind="test.name"></div>
+
+  <form>
+    <md-input-container>
+      <label for="a">A</label>
+      <input type="number" id="a" ng-model="test.a" md-autofocus/>
+    </md-input-container>
+    <md-input-container>
+      <label for="b">B</label>
+      <input type="number" id="b" ng-model="test.b"/>
+    </md-input-container>
+
+    <div ng-bind="test.result"></div>
+
+
+    <md-button class="md-raised md-primary" data-ng-click="test.Calculate();">Berechne</md-button>
+  </form>
+
+</div>
